@@ -1,11 +1,11 @@
-# Use official Java 17 image
-FROM eclipse-temurin:21.0.9_10-jdk-jammy
+# Use the official Eclipse Temurin image for Java 25
+FROM eclipse-temurin:25-jdk-jammy
 
-# Set working directory WORKDIR /app
+# Set the working directory inside the container
+WORKDIR /app
 
-# Copy the jar file into container
-COPY target/simple-java-app-1.0.jar /app/app.jar
+# Copy the compiled JAR file from your target folder
+COPY target/simple-java-app-1.0.jar app.jar
 
-# Run the application
- 
-CMD ["java", "-jar", "/app/app.jar"]
+# Execute the application
+CMD ["java", "-jar", "app.jar"]
